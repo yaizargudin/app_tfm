@@ -1,0 +1,89 @@
+/* BODY */
+
+body {
+    margin: 0px;
+    background-color: #F3E7D8;
+    background-image: url("Fotos/fondofiguras.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 170px;
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    width: 100%;
+    min-height: 350px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #C7B65D;
+}
+
+/* TEXTOS */
+
+h1 {
+    font-family: SignikaNegative;
+    color: #222222;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 43px;
+    margin: 15px;
+    color: #333125;
+}
+
+h2 {
+    font-family: Mulish;
+    color: #222222;
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+    margin: 3px;
+    color: #333125;
+}
+
+h3 {
+    font-family: Mulish;
+    color: #222222;
+    text-align: center;
+    font-weight:normal;
+    font-size: 18px; 
+    margin: 3px;
+    color: #333125;
+}
+
+/* RECUADRO TEXTO */
+
+.validador {
+    text-align: center;
+    margin: 30px 30px 30px 15px;
+    max-width: 100%;
+}
+
+label {
+    font-family: Mulish;
+    color: #333125;
+    font-weight: 100;
+    font-size: 18px;
+    margin: 5px;
+}
+
+#story {
+    padding: 5px;
+    margin: 10px;
+    min-width: 600px; 
+}
+
+#check {
+    margin: 10px;
+    padding: 5px;
+}
+
+#result {
+    font-family: Mulish;
+    color: #333125;
+    font-weight: 100;
+    font-size: 18px;
+    margin: 5px;
+}

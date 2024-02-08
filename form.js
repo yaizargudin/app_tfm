@@ -1,5 +1,5 @@
 function loader(){
-    document.getElementById('check').style.display = "none";
+    document.getElementById('check').disabled = true;
     var pResult = document.getElementById('text-result');
     const loaderSpan = document.createElement('span');
     loaderSpan.classList.add('loader');
@@ -8,7 +8,7 @@ function loader(){
 
 function processMessage(message){
     document.querySelector('.loader').style.display = "none"
-    document.getElementById('check').style.display = "inline-block";
+    document.getElementById('check').disabled = false;
     var pResult = document.getElementById('text-result');
     pResult.innerHTML = message;
 
@@ -40,9 +40,9 @@ function callModel(story){
     });
 }
 function getStory() {
-    loader();
     var story = document.getElementById("story").value;
     if(story.length > 10){
+        loader();
         document.getElementById("story").style.border="0px";
         document.querySelector('.text-too-short').style.display="none";
         callModel(story)
@@ -53,6 +53,11 @@ function getStory() {
 
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById("check").addEventListener("click", getStory);
-    document.getElementById("check").addEventListener("click", getStory);
+    document.getElementById("story").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          getStory();
+        }
+      });
 
 });

@@ -1,12 +1,27 @@
-function processMessage(message){
-    var div = document.getElementById('result');
-    div.innerHTML += '<p>'+message+'</p>';
+function loader(){
+    document.getElementById('check').style.display = "none";
+    var pResult = document.getElementById('text-result');
+    const loaderSpan = document.createElement('span');
+    loaderSpan.classList.add('loader');
+    pResult.appendChild(loaderSpan);
+}
 
+function processMessage(message){
+    document.querySelector('.loader').style.display = "none"
+    document.getElementById('check').style.display = "inline-block";
+    var pResult = document.getElementById('text-result');
+    pResult.innerHTML = message;
+
+}
+
+function tooShortText(){
+     document.querySelector('.text-too-short').style.display="block";
+     document.getElementById("story").style.border="2px solid red";
 }
 
 function callModel(story){
     // Define the API URL
-    const apiUrl = 'http://127.0.0.1:5000/?story='+story;
+    const apiUrl = 'https://yaizaargudin.pythonanywhere.com//?story='+story;
  
     // Make a GET request
     fetch(apiUrl)
@@ -25,14 +40,19 @@ function callModel(story){
     });
 }
 function getStory() {
+    loader();
     var story = document.getElementById("story").value;
     if(story.length > 10){
+        document.getElementById("story").style.border="0px";
+        document.querySelector('.text-too-short').style.display="none";
         callModel(story)
     }else{
-        console.log("Es demasiado corta la historia")
+        tooShortText();
     }
   }
 
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById("check").addEventListener("click", getStory);
+    document.getElementById("check").addEventListener("click", getStory);
+
 });

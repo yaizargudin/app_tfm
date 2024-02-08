@@ -17,9 +17,10 @@
         <section class="validador">
             <label for="story">Introduce la historia de usuario a validar:</label><br>
             <input type="text" id="story" name="story" required minlength="4" /><br>
+            <p class="text-too-short">Es demasiado corta la historia de usuario</p><br>
             <button id="check">Comprobar</button><br>
             <div id="result">
-                <p>Resultado: CORRECTO</p>
+                <p id="text-result"></p>
             </div> 
         </section>
     </body>

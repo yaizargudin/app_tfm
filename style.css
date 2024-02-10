@@ -42,6 +42,12 @@ h2 {
     margin: 3px;
     color: #333125;
 }
+
+.form-info{
+    margin-top:5%
+
+}
+
 @media (max-width: 1250px) {
     h1{
         font-size: 32px;
@@ -101,7 +107,7 @@ label {
     font-family: Mulish;
     color: #333125;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 22px;
     margin: 5px;
 }
 .text-too-short {
